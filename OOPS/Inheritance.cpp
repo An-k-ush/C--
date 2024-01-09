@@ -2,8 +2,8 @@
 using namespace std;
 
 class Bird {
-private:
-    bool eating = false;
+private:                                     //   Parent Class pointer can point to the object any of its descendant class
+    bool eating = false;                     //   But Converse is not True
     bool flying  = false;
 public:
     string name;
