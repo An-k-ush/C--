@@ -4,7 +4,8 @@
     "*.ejs": "html",
     "iostream": "cpp",
     "ostream": "cpp",
-    "string": "cpp"
+    "string": "cpp",
+    "map": "cpp"
   },
   "C_Cpp_Runner.msvcBatchPath": "",
   "C_Cpp_Runner.cCompilerPath": "gcc",
