@@ -9,9 +9,9 @@ public:
     void getX() {
         std::cout << x << std::endl;
     }
-    A(int x) {
-        this->x = x;
-    }
+    // A(int x) {
+    //     this->x = x;
+    // }
 };
 class B : virtual public A {
     int y;
@@ -22,9 +22,9 @@ public:
     void getY() {
         std::cout << y << std::endl;
     }
-    B(int x, int y) : A(x) {
-        this->y = y;
-    }
+    // B(int x, int y) : A(x) {
+    //     this->y = y;
+    // }
 };
 class C : virtual public A {
     int z;
@@ -35,9 +35,9 @@ public:
     void getZ() {
         std::cout << z << std::endl;
     }
-    C(int x, int z) : A(x) {
-        this->z = z;
-    }
+    // C(int x, int z) : A(x) {
+    //     this->z = z;
+    // }
 };
 class D : public B, public C {
     int p;
@@ -48,19 +48,19 @@ public:
     void getP() {
         std::cout << p << std::endl;
     }
-    D(int x, int y, int z, int p) : A(x), B(x,y), C(x,z)
-    {
-        this->p = p;
-    }
+    // D(int x, int y, int z, int p) : A(x), B(x,y), C(x,z)
+    // {
+    //     this->p = p;
+    // }
 };
 
 
 int main() {
-    D app(1,2,3,4);
+    D app;
     app.getP();
     app.getZ();
     app.getY();
-    app.B::getX();
+    app.getX();
     int* ptr = &app.C::x;
     int* ptr2 = &app.B::x;
     std::cout << ptr<<std::endl;
