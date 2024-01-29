@@ -22,6 +22,7 @@ int main() {
     for(int i:v) {
         cout << i << " ";
     }
+    
     cout << endl;
     v.clear();
     cout <<"Size = " << v.size();
