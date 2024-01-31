@@ -1,22 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+template<class T>
 class Stack{
 private:
     int top = -1;
-    vector<int> v;
+    vector<T> v;
 public:
-    void push(int data) {
+    void push(T data) {
         v.push_back(data);
         this->top++;
     }
-    int get_Top() {
+    T get_Top() {
         if(this->top != -1) {
             return v[this->top];
         }
         else {
             cout << "Stack is Empty"<<endl;
-            return INT32_MIN;
         }
     }
     void pop() {
@@ -43,9 +42,9 @@ public:
 };
 
 int main() {
-    Stack st;
-    st.push(10);
-    st.push(20);
+    Stack<string> st;
+    st.push("Ank");
+    st.push("Ush");
     cout <<st.get_Top()<<endl;
     st.pop();
     cout << st.get_Top()<<endl;
