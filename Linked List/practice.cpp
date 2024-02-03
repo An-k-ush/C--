@@ -8,6 +8,14 @@ public:
     Node(int data) {
         this->data = data;
     }
+    void display(Node* head) {
+    Node* temp = head;
+    while(temp != nullptr) {
+        cout << temp->data<< " ";
+        temp = temp->next;
+    }
+    cout <<"\n";
+}
 };
 
 Node* converttoLL(vector<int> v) {
@@ -22,14 +30,7 @@ Node* converttoLL(vector<int> v) {
     return head;
 }
 
-void display(Node* head) {
-    Node* temp = head;
-    while(temp != nullptr) {
-        cout << temp->data<< " ";
-        temp = temp->next;
-    }
-    cout <<"\n";
-}
+
 
 void ins_ert(Node*& head, int position, int data) {
     if(!position) {
@@ -37,13 +38,44 @@ void ins_ert(Node*& head, int position, int data) {
         temp->next = head;
         head = temp;
     }
+    else {
+        Node* temp = head;
+        Node* temp_2 =  head->next;
+        for(int i = 0; i < position-1; i++) {
+            temp = temp->next;
+            temp_2 = temp_2 ->next;
+        }
+        Node* temp_3 = new Node(data);
+        temp ->next = temp_3;
+        temp_3 ->next = temp_2;
+    }
     
+}
+
+void del_ete(Node*& head, int position) {
+    if(!position) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+    }
+    else {
+        Node* temp = head;
+        Node* temp_2 = head->next;
+        for(int i = 0; i < position-1; i++) {
+            temp = temp->next;
+            temp_2 = temp_2->next;
+        }
+        temp->next =temp_2->next;
+        delete temp_2;
+    }
 }
 
 int main() {
     vector<int> v = {1,2,5,7,3,6};
     Node* head =  converttoLL(v);
-    display(head);
+    
     ins_ert(head, 0, 20);
-    display(head);
+    del_ete(head,0);
+    del_ete(head,5);
+    head->display(head);
 }
