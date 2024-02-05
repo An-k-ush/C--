@@ -17,12 +17,12 @@ public:
             cout << "Stack is full"<<endl;
             return;
         }
-        top += 1;
+        top++;
         arr[top] = data;
     }
     void pop() {
         if(top != -1) {
-            top -= 1;
+            top--;
         }
         else {
             cout << "Stack is empty"<<endl;
