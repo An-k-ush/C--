@@ -13,7 +13,7 @@ void dfs(int node, vector<int> adj[],int parent) {
     ti_me[node].first = t;
     t++;
     // in-time. We are entering a node
-    // before the loop starts we can do anything we want to the node here
+    // bdefore the loop starts we can o anything we want to the node here
     // here we are only printing it but we can even modify it,store it somewhere etc.
     cout<<node<<" ";
     for(int i = 0; i < adj[node].size(); i++) {
